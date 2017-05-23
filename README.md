@@ -1,4 +1,4 @@
-![](https://github.com/khyatiparekh/Data515_FinalProject/blob/master/logo.png  =250x250)
+<img src="https://github.com/khyatiparekh/Data515_FinalProject/blob/master/logo.png" width="48">
 # NAME - Stock Investing for Dummies
 ## 
 
