@@ -1,7 +1,7 @@
-# <NAME> - Stock Investing for Dummies
+# NAME - Stock Investing for Dummies
 ## 
 
-<NAME> is a template project...
+NAME is a template project...
 
 To use it as a template for your own project, you will need to clone this
 repository into your computer and follow the instructions at the [bottom of this page]
@@ -29,4 +29,4 @@ let's consider the core of the project. This is the code inside of
 ### Licensing
 ### Getting cited
 ### Scripts
-### Using <NAME> as a template
+### Using NAME as a template
