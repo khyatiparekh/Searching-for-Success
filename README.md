@@ -29,30 +29,8 @@ The project has the following structure:
        |- doc/  
        |- examples/  
             |- demo.ipynb  
-       .gitignore  
-    shablona/
-      |- README.md
-      |- shablona/
-         |- __init__.py
-         |- shablona.py
-         |- due.py
-         |- data/
-            |- ...
-         |- tests/
-            |- ...
-      |- doc/
-         |- Makefile
-         |- conf.py
-         |- sphinxext/
-            |- ...
-         |- _static/
-            |- ...
-      |- setup.py
-      |- .travis.yml
-      |- appveyor.yml
-      |- LICENSE
-      |- ipynb/
-         |- ...       
+           .gitignore  
+     
 In the following sections we will examine these elements one by one. First,
 let's consider the core of the project. This is the code inside of
 `**.py`. 
