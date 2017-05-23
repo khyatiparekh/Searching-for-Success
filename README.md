@@ -14,22 +14,22 @@ share it with others, test it, document it, and track its evolution.
 
 ### Organization of the  project
 
-The project has the following structure:
-    project_name/
-      |- README.md
-      |- LICENSE
-      |- project_name/
-         |- __init__.py
-         |- project_name.py
-         |- submodule/
-         |- tests/
-            |- __init__.py
-            |- test_core.py
-         |- setup.py 
-       |- doc/
-       |- examples/
-            |- demo.ipynb
-       .gitignore
+The project has the following structure:  
+    project_name/  
+      |- README.md  
+      |- LICENSE  
+      |- project_name/  
+         |- __init__.py  
+         |- project_name.py  
+         |- submodule/  
+         |- tests/  
+            |- __init__.py  
+            |- test_core.py  
+         |- setup.py   
+       |- doc/  
+       |- examples/  
+            |- demo.ipynb  
+       .gitignore  
        
 In the following sections we will examine these elements one by one. First,
 let's consider the core of the project. This is the code inside of
