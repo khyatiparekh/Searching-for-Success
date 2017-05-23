@@ -1,4 +1,7 @@
-![alt text](https://github.com/khyatiparekh/Data515_FinalProject/blob/master/logo.png)
+.. image:: https://github.com/khyatiparekh/Data515_FinalProject/blob/master/logo.png
+   :height: 100px
+   :width: 200 px
+   :scale: 5 %
 # NAME - Stock Investing for Dummies
 ## 
 
