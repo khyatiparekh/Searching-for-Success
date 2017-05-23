@@ -1,13 +1,17 @@
 """ Quarterly Earning Report Docstring
-    This module implements the functions: get_last_day_quarter, print_last_day_quarter,
+    This module implements the functions: get_quarter_begin, get_quarter_end,
+        get_current_quarter_dates, print_last_day_quarter,
         get_default_report_dates, get_yahoo_data, and get_earnings_data.
-    The get_last_day_quarter function calculates the last day of the current quarter.
+    The get_quarter_begin function calculates the first day of the current quarter.
+    The get_quarter_end function calculates the last day of the current quarter.
+    The get_current_quarter_dates returns the formatted begin and end dates.
     The get_earnings_data first calls get_yahoo_data and if no earnings date, then
         calls get_default_report_dates for the estimated earnings report dates.
     The get_yahoo_data function will download stock price data from Yahoo finance,
         saves the daily quote information and returns the earnings report date(s).
 """
 
+import bisect
 from collections import OrderedDict
 import datetime
 import json
@@ -17,12 +21,26 @@ from time import sleep
 import requests
 from lxml import html
 
-def get_last_day_quarter(par_date=None):
-    """Returns the last day of the current fiscal quarter.
+
+def get_quarter_begin():
+    """ Returns the first day of the current quarter
+        Uses the bisect and datetime libraries.
+    Returns:
+        datetime.date: The return value is the first day of fiscal quarter: yyyy-mm-dd.
+    """
+    today = datetime.date.today()
+    qbegins = [datetime.date(today.year, month, 1) for month in (1, 4, 7, 10)]
+    idx = bisect.bisect(qbegins, today)
+    return qbegins[idx-1]
+
+
+def get_quarter_end(par_date=None):
+    """ Returns the last day of the current fiscal quarter.
+        Uses the datetime library.
     Args:
          par_date (datetime.date): Optional argument, the default date is today.
     Returns:
-        datetime.date: The return value. The formatted date of the last day of fiscal quarter.
+        datetime.date: The return value is the last day of fiscal quarter: yyyy-mm-dd.
     """
     if par_date is None:
         date = datetime.date.today()
@@ -35,10 +53,23 @@ def get_last_day_quarter(par_date=None):
            datetime.timedelta(days=-1))
 
 
-def print_last_day_quarter():
-    """Helper function for printing results of get_last_day_quarter()
+def get_current_quarter_dates():
+    """ Returns start and end dates of current quarter formatted to use in function call.
+        Uses the strftime method from the datetime library.
+    Returns:
+        begin_quarter: (str) format mm-dd-yyyy
+        end_date: (str) format mm-dd-yyyy
     """
-    quater_end_date = get_last_day_quarter()
+    begin_quarter = get_quarter_begin().strftime('%m-%d-%Y')
+    end_date = get_quarter_end().strftime('%m-%d-%Y')
+    return(begin_quarter, end_date)
+
+
+def print_last_day_quarter():
+    """ Helper function for printing results of get_last_day_quarter()
+        Uses the strftime method to format the date from the datetime library.
+    """
+    quater_end_date = get_quarter_end()
     quater_end_date = quater_end_date.strftime('%B %d, %Y')
     print("The current fiscal quarter ends on %s.\n" % quater_end_date)
 
@@ -52,9 +83,9 @@ def get_default_report_dates(par_end_date=None):
         last_date (datetime.date): The second return value.
     """
     if par_end_date is None:
-        date = get_last_day_quarter()
+        date = get_quarter_end()
     else:
-        date = get_last_day_quarter(par_end_date)
+        date = get_quarter_end(par_end_date)
     start_day_num = (date + datetime.timedelta(days=30)).weekday()
     day_num_target = 4
     diff = day_num_target - start_day_num
@@ -161,5 +192,6 @@ def get_earnings_data(company, ticker=None):
 
 
 if __name__ == "__main__":
+    print(get_current_quarter_dates())
     print_last_day_quarter()
     get_earnings_data("Google")
