@@ -1,4 +1,4 @@
-![picture](https://github.com/khyatiparekh/Data515_FinalProject/blob/master/logo.png | width=16)
+![](https://github.com/khyatiparekh/Data515_FinalProject/blob/master/logo.png  =250x250)
 # NAME - Stock Investing for Dummies
 ## 
 
