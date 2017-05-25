@@ -5,6 +5,23 @@ keywords form feature selection. The second function, plot daily adjusted close 
 price for given company.
 """
 
+
+def get_data (company):
+    import pandas as pd
+    
+    if company == 'Google':
+        data = pd.read_csv('Google.csv', sep=',',parse_dates=['Date'])
+        selected_kw = ["Google Earth","Google Maps","Google Chrome","Google Cardboard","Google Nexus"]
+    elif company == 'Microsoft':
+        data = pd.read_csv('Microsoft.csv', sep=',',parse_dates=['Date'])
+        selected_kw = ["Microsoft Outlook","Microsoft Powerpoint","Microsoft Office Product Key","Microsoft Excel","MicrosoftSkype"]
+    elif company == 'Amazon':
+        data = pd.read_csv('Amazon.csv', sep=',',parse_dates=['Date'])
+        selected_kw = ["Amazon kindle","Amazon order","Amazon recall","Amazon register","Amazon sucks"] 
+    else:
+        print('No Data Available')
+    return data, selected_kw
+
 def google_search_trends_plot(selected_kw):
     """Given keywords list, this plot the standardized Google daily searched counts.
     
@@ -46,7 +63,7 @@ def google_search_trends_plot(selected_kw):
 selected_kw = ["Amazon Kindle","Amazon Error","Amazon Order"] #Identified from feature selection
 google_search_trends_plot(selected_kw)
 
-def stock_plot():
+def stock_plot(data):
     """Given company selection, this plot daily stock adjusted close price of selected company(AMZN).
     
     Parameters
@@ -64,9 +81,11 @@ def stock_plot():
     
     from bokeh.charts import TimeSeries, show, output_file
     
-    AMZN = pd.read_csv("AMZN.csv",parse_dates=['Date'])
-    AMZN.set_index('Date', inplace=True)
-    p = TimeSeries(AMZN['Adj Close'],title="AMZN Daily Adjusted Close Price", ylabel='Stock Prices', xlabel='Date')
+    p = TimeSeries(data['Price'],title="Adjusted Close Price", ylabel='Stock Prices', xlabel='Date')
 
     show(p)
-stock_plot()
+
+data, selected_kw = get_data("Amazon")
+google_search_trends_plot(selected_kw)
+stock_plot(data)
+
