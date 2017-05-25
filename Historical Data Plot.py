@@ -1,14 +1,30 @@
 """Historical Data Plot Docstring
-This module implement two functions: google_search_trends_plot and stock_plot.
-The first function, google_search_rends_plot, plot Google trends for selected
-keywords form feature selection. The second function, plot daily adjusted close stock
+This module implement three functions: get_data,google_search_trends_plot and stock_plot.
+The first function, get_data, will read data for input company with selected keywords.
+The second function, google_search_rends_plot, plot Google trends for selected
+keywords from feature selection. The third function, plot daily adjusted close stock
 price for given company.
 """
 
 
 def get_data (company):
+     """Given company name, this read corresponding data file and get keywords selected.
+    
+    Parameters
+    ----------
+    company: String
+             Company name
+    
+    Returns
+    -------
+    output: data file with keywords selected google index and stock price. And keywords list
+            for selected company.
+    """
+    
+    # Import Libraries
     import pandas as pd
     
+    # Three company selections: "Google", "Microsoft", "Amazon"
     if company == 'Google':
         data = pd.read_csv('Google.csv', sep=',',parse_dates=['Date'])
         selected_kw = ["Google Earth","Google Maps","Google Chrome","Google Cardboard","Google Nexus"]
@@ -84,8 +100,3 @@ def stock_plot(data):
     p = TimeSeries(data['Price'],title="Adjusted Close Price", ylabel='Stock Prices', xlabel='Date')
 
     show(p)
-
-data, selected_kw = get_data("Amazon")
-google_search_trends_plot(selected_kw)
-stock_plot(data)
-
