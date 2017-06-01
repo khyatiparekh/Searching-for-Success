@@ -35,7 +35,7 @@ The project has the following structure:
      
 In the following sections we will examine these elements one by one. First,
 let's consider the core of the project. This is the code inside of
-`**.py`. 
+`EarningReport.py, PredictionStockPrice.py and HistoricalPlot.py`. 
 
 ### Module code
 ### Project Data
