@@ -1,13 +1,13 @@
 """ Quarterly Earning Report Docstring
     This module implements the functions: get_quarter_begin, get_quarter_end,
         get_current_quarter_dates, print_last_day_quarter,
-        get_default_report_dates, get_yahoo_data, and get_earnings_data.
+        get_default_report_dates, get_yahoo, and get_earnings_data.
     The get_quarter_begin function calculates the first day of the current quarter.
     The get_quarter_end function calculates the last day of the current quarter.
     The get_current_quarter_dates returns the formatted begin and end dates.
-    The get_earnings_data first calls get_yahoo_data and if no earnings date, then
+    The get_earnings_data first calls get_yahoo and if no earnings date, then
         calls get_default_report_dates for the estimated earnings report dates.
-    The get_yahoo_data function will download stock price data from Yahoo finance,
+    The get_yahoofunction will download stock price data from Yahoo finance,
         saves the daily quote information and returns the earnings report date(s).
 """
 
@@ -94,7 +94,7 @@ def get_default_report_dates(par_end_date=None):
     return first_date, last_date
 
 
-def get_yahoo_data(ticker):
+def get_yahoo(ticker):
     """This function is a modified version of the code from the website:
     https://www.scrapehero.com/scrape-yahoo-finance-stock-market-data/
     The Scraping Logic starts by constructing the URL of the search
@@ -178,7 +178,7 @@ def get_earnings_data(company, ticker=None):
         ticker = ticker.upper()
         stock = ticker
     logging.info("Fetching data for %s", str(stock))
-    earnings_date, date_list = get_yahoo_data(stock)
+    earnings_date, date_list = get_yahoo(stock)
     if earnings_date == "":
         report_date1, report_date2 = get_default_report_dates()
         report_date1 = report_date1.strftime('%B %d, %Y')
