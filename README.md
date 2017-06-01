@@ -1,9 +1,11 @@
 <img src="https://github.com/khyatiparekh/Data515_FinalProject/blob/master/logo.png" width="80">
 
-# project_name - Stock Investing for Dummies
+# Searching For Success - Stock Investing for Dummies
 ## 
 
-project_name is a template project...
+Searching For Success is a template project that help amateur investor to visualize search trends 
+on Google for selected company and get probability that the stock price will increase when 
+the quarterly reports will be released for the same company.
 
 To use it as a template for your own project, you will need to clone this
 repository into your computer and follow the instructions at the [bottom of this page]
