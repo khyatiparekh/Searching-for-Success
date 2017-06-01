@@ -130,5 +130,3 @@ def prediction_stock_price(company):
     print("""Predicted probability the stock price will increase after
            releasing next quarter’s earnings report:  %.2f"""
           % prediction_model(keywords, price))
-
-
