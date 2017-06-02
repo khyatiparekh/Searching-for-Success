@@ -62,10 +62,10 @@ def get_current_quarter_dates():
     """
     begin_quarter = get_quarter_begin().strftime('%m-%d-%Y')
     end_date = get_quarter_end().strftime('%m-%d-%Y')
-    print("Current Quarter Date: %s to %s " % (begin_quarter, end_date))
+    print("Current Quarter: %s to %s " % (begin_quarter, end_date))
 
 
-def print_last_day_quarter():
+def show_last_day_quarter():
     """ Helper function for printing results of get_last_day_quarter()
         Uses the strftime method to format the date from the datetime library.
     """
@@ -149,10 +149,6 @@ def get_yahoo(ticker):
         summary_data.update(
             {'1y Target Est': target, 'EPS (TTM)': eps,
              'Earnings Date': earnings_date, 'ticker': ticker, 'url': url})
-        logging.info("Writing data to JSON output file")
-        # store date in a JSON tree
-        with open('%s_summary.json' % ticker, 'w') as file:
-            json.dump(summary_data, file, indent=4)
         return earnings_date, date_list
 
     except ValueError:
@@ -193,5 +189,5 @@ def get_earnings_data(company, ticker=None):
 
 if __name__ == "__main__":
     print(get_current_quarter_dates())
-    print_last_day_quarter()
+    show_last_day_quarter()
     get_earnings_data("Google")
