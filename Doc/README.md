@@ -1,4 +1,4 @@
-This folder contains two documents:
+This folder contains two documents with supporting illustration graph:
 
 Functional specification
 ========================
