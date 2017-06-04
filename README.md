@@ -14,15 +14,14 @@ First, let me explain all the different moving parts that make up the
 python project, and all the elements which allow us to effectively
 share it with others, test it, document it, and track its evolution.
 
-### Organization of the  project
+## Organization of the  project
 
 The project has the following structure:  
    * project_name/  
      * |- README.md  
      * |- LICENSE  
-     * |- project_name/  
+     * |- Searching For Success/  
         * |- __init__.py  
-        * |- project_name.py  
         * |- submodule/  
         * |- tests/  
            * |- __init__.py  
@@ -30,13 +29,22 @@ The project has the following structure:
         * |- setup.py   
       * |- doc/  
       * |- examples/  
-           * |- demo.ipynb  
+           * |- EarningReport Example
+           * |- HistoricalDataPlot Example
+           * |- PredictionStockPrice Example
       * .gitignore  
      
 In the following sections we will examine these elements one by one. First,
 let's consider the core of the project. This is the code inside of
-`EarningReport.py, PredictionStockPrice.py and HistoricalPlot.py`. 
+`EarningReport.py, PredictionStockPrice.py and HistoricalPlot.py` in Searching For Success folder 
 
+## Module Code
+We place the module code in three files called `EarningReport.py, PredictionStockPrice.py and HistoricalPlot.py`
+in the Submodule folder in Searching For Success.  For the functions to work, we need to run the interface.ipynb which contrain code that imports everything in that file into the namespace of the projcet:
+`import EarningReport
+ import PredictionStockPrice 
+ import HistoricalPlot`
+ 
 ### EarningReport.py
 
 This module implements the functions: 
@@ -68,7 +76,7 @@ This module implements three functions:
 
 The first function,
 features_selection will use Lasso regression model to select
-6 keywords that are significant to the company's stock performance.
+5 keywords that are significant to the company's stock performance.
 And the second function predcition_model will predict the
 likelihood of stock prices increase or decrease after upcomming
 earning report released for given company. And the third function
