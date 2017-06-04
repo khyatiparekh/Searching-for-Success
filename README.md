@@ -81,3 +81,19 @@ This module implements one function: historical_data_plot.
 
 The function will read the data for the input company with selected keywords and then plot Google trends for selected keywords from previous feature selection. 
 Then plot daily adjusted close stock price for given company.
+
+###How to use module
+
+Once you have run setup.py, choose the company for which you would like to see the prediction.
+
+In the textbox you will enter:
+1 for Amazon
+2 for Google
+3 for Microsoft
+
+The module will then output:
+1) The current quarter dates, 
+2) When the current fiscal quarter ends, 
+3) When the next earnings report is expected from that company
+4) Plots to show the google trends for select keywords of that company
+5) The predicted probability that the stock price will increase after the next quarter's earnings have been released.
