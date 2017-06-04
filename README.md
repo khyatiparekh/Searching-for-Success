@@ -1,6 +1,7 @@
 <img src="https://github.com/khyatiparekh/Data515_FinalProject/blob/master/logo.png" width="80">
 
-# Searching For Success ## - Using google searches to predict the stock market
+# Searching For Success 
+## Using google searches to predict the stock market
 
 Searching For Success is a template project that help amateur investor to visualize search trends 
 on Google for selected company and get probability that the stock price will increase when 
