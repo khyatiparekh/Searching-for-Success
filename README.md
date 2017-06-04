@@ -40,10 +40,10 @@ let's consider the core of the project. This is the code inside of
 
 ## Module Code
 We place the module code in three files called `EarningReport.py, PredictionStockPrice.py and HistoricalPlot.py`
-in the Submodule folder in Searching For Success.  For the functions to work, we need to run the interface.ipynb which contrain code that imports everything in that file into the namespace of the projcet:
-`import EarningReport
- import PredictionStockPrice 
- import HistoricalPlot`
+in the Submodule folder in Searching For Success.  For the functions to work, we need to run the interface.ipynb which contrain code that imports everything in that file into the namespace of the projcet:  
+`import EarningReport  
+ import PredictionStockPrice   
+ import HistoricalPlot`  
  
 ### EarningReport.py
 
@@ -105,3 +105,12 @@ The module will then output:
 3) When the next earnings report is expected from that company
 4) Plots to show the google trends for select keywords of that company
 5) The predicted probability that the stock price will increase after the next quarter's earnings have been released.
+
+## Project Data
+In this case, the project data is rather samll, and recorded in csv files saved in `Searching For Success/Data`.  
+
+## Testing  
+
+## Documentation
+
+## Using `Searching For Success` as a template
