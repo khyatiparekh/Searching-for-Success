@@ -1,8 +1,3 @@
-
-# coding: utf-8
-
-# In[22]:
-
 """Historical Data Plot Docstring
 This module implement oen function: historical_data_plot.
 The function will read data for input company with selected keywords.
@@ -47,8 +42,7 @@ def historical_data_plot(company):
                        "Google Cardboard", "Google Nexus"]
         stock = dict([
             ('GOOG', data['Price']),
-            ('Date', data['Date'])]
-        )
+            ('Date', data['Date'])])
     elif company == 'Microsoft':
         data = pd.read_csv('Microsoft.csv', sep=',', parse_dates=['Date'])
         selected_kw = ["Microsoft Outlook", "Microsoft Powerpoint",
@@ -56,16 +50,14 @@ def historical_data_plot(company):
                        "Microsoft Skype"]
         stock = dict([
             ('MSFT', data['Price']),
-            ('Date', data['Date'])]
-        )
+            ('Date', data['Date'])])
     elif company == 'Amazon':
         data = pd.read_csv('Amazon.csv', sep=',', parse_dates=['Date'])
         selected_kw = ["Amazon kindle", "Amazon order", "Amazon recall",
                        "Amazon register", "Amazon sucks"]
         stock = dict([
             ('AMZN', data['Price']),
-            ('Date', data['Date'])]
-        )
+            ('Date', data['Date'])])
     else:
         print('No Data Available')
     pytrend = TrendReq(google_username, google_password,
@@ -73,22 +65,12 @@ def historical_data_plot(company):
     pytrend.build_payload(kw_list=selected_kw,
                           timeframe='2006-10-01 2017-3-31')
     interest_over_time_df_amazon = pytrend.interest_over_time()
-    trends_plot = TimeSeries(interest_over_time_df_amazon, xlabel='Date', dash=selected_kw, color=selected_kw)
+    trends_plot = TimeSeries(interest_over_time_df_amazon, xlabel='Date',
+                             dash=selected_kw, color=selected_kw)
     stock_plot = TimeSeries(stock, title="Daily Stock Adjusted Close Price",
                             ylabel='Stock Prices', x='Date')
     trends_plot.legend.location = "top_left"
-    trends_plot.legend.click_policy='hide'
+    trends_plot.legend.click_policy = 'hide'
     trends_plot.title.text = 'Click on legend entries to hide the corresponding keywords lines'
     show(trends_plot)
     show(stock_plot)
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
-
-
