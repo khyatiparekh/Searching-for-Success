@@ -107,7 +107,7 @@ def prediction_stock_price(company):
     elif company == 'Amazon':
         data = pd.read_csv('Amazon.csv', sep=',')
     else:
-        print('No Data Available')
+        return 'No Data Available'
 
     # Data Preparation
     keywords = data.drop('Price', axis=1)
@@ -127,6 +127,6 @@ def prediction_stock_price(company):
     price = data['Price Change']
 
     prediction_model(keywords, price)
-    print("""Predicted probability the stock price will increase after
+    return """Predicted probability the stock price will increase after
            releasing next quarter’s earnings report:  %.2f"""
-          % prediction_model(keywords, price))
+          % prediction_model(keywords, price)
