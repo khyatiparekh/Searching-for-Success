@@ -25,7 +25,9 @@ The project has the following structure:
         * |- submodule/  
         * |- tests/  
            * |- __init__.py  
-           * |- test_core.py  
+           * |- test_EarningReport.py  
+           * |- test_PredictionStockPrice.py  
+           * |- test_HistoricalDataPlot.py  
         * |- setup.py   
       * |- doc/  
       * |- examples/  
