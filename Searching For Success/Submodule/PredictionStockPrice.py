@@ -3,7 +3,7 @@
 This mocdule implement three functions: feature_selection,
 prediction_model and prediction_stock_price. The first function,
 featues_selection will use Lasso regression model to select
-6 keywords that are significant to the company's stock performance.
+5 keywords that are significant to the company's stock performance.
 And the second function predcition_model will predict the
 likelihood of stock prices increase or decrease after upcomming
 earning report released for given company. And the third function
@@ -72,7 +72,7 @@ def prediction_model(keywords, price):
     model = linear_model.LogisticRegression(penalty='l2', fit_intercept=False, tol=10e-8,
                                             max_iter=1000)
     model.fit(keywords, price)
-    return np.mean(model.predict(keywords[-90:]))
+    return round(np.mean(model.predict(keywords[-90:])), 3)
 
 
 def prediction_stock_price(company):
@@ -127,6 +127,4 @@ def prediction_stock_price(company):
     price = data['Price Change']
 
     prediction_model(keywords, price)
-    return """Predicted probability the stock price will increase after
-           releasing next quarter’s earnings report:  %.2f"""
-          % prediction_model(keywords, price)
+    return prediction_model(keywords, price)
