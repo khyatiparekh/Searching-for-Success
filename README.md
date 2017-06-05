@@ -22,7 +22,11 @@ The project has the following structure:
      * |- LICENSE  
      * |- Searching For Success/  
         * |- __init__.py  
-        * |- submodule/  
+        * |- submodule/ 
+           * |- __init__.py  
+           * |- EarningReport.py  
+           * |- PredictionStockPrice.py  
+           * |- HistoricalDataPlot.py  
         * |- tests/  
            * |- __init__.py  
            * |- test_EarningReport.py  
