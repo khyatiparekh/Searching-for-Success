@@ -5,17 +5,15 @@ from setuptools import setup, find_packages
 from codecs import open
 from os import path
 
-from distutils.core import setup
-
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
-setup(name='final_prediction',
+setup(name='searching_for_success',
     version='1.0',
-    description='Python Distribution Utilities',
+    description='Predicting stock price change on earnings release based on Google Trends data',
     author='DATA 515 Group',
     author_email='data515gtrend@gmail.com',
     url='https:/github.com/khyatiparekh/Data515_FinalProject/',
@@ -39,48 +37,29 @@ setup(name='final_prediction',
         'Programming Language :: Python :: 3.5',
     ],
 
-    # What does your project relate to?
     keywords='google trends stock price prediction technology company',
 
-    # You can just specify the packages manually here if your project is
-    # simple. Or you can use find_packages().
-    packages = ['EarningReport', 'HistoricalDataPlot', 'PredictionStockPrice'],
+    PACKAGES = find_packages(),
+    #packages = ['EarningReport', 'HistoricalDataPlot', 'PredictionStockPrice'],
 
-    # List run-time dependencies here.  These will be installed by pip when
-    # your project is installed. For an analysis of "install_requires" vs pip's
-    # requirements files see:
-    # https://packaging.python.org/en/latest/requirements.html
-    install_requires=['bokeh, matplotlib, numpy, pandas, requests'],
+    # List run-time dependencies here.
+    install_requires=["bokeh", "cycler", "icu", "jinja2", "jpeg", "libpng",
+                      "lxml", "markupsafe", "matplotlib", "mkl", "numpy",
+                      "openssl", "pandas", "pyparsing", "pyqt", "python-dateutil",
+                      "pytz", "pyyaml", "qt", "requests", "sip", "six", "tk",
+                      "tornado",  "zlib"],
 
-    # List additional groups of dependencies here (e.g. development
-    # dependencies). You can install these using the following syntax,
-    # for example:
     # $ pip install -e .[dev,test]
     extras_require={
-        'dev': ['check-manifest'],
-        'test': ['coverage'],
+        "pytrends": ["Unofficial API for Google Trends"],
+        "BeautifulSoup4": ["Screen-scraping library"],
     },
 
     # If there are data files included in your packages that need to be
     # installed, specify them here.
     package_data={
-        'amazon': ['Amazon.csv'],
-        'google': ['Google.csv'],
-        'microsoft': ['Microsoft.csv'],
-    },
-
-    # Although 'package_data' is the preferred approach, in some case you may
-    # need to place data files outside of your packages. See:
-    # http://docs.python.org/3.4/distutils/setupscript.html#installing-additional-files # noqa
-    # In this case, 'data_file' will be installed into '<sys.prefix>/my_data'
-    data_files=[('my_data', ['data/data_file'])],
-
-    # To provide executable scripts, use entry points in preference to the
-    # "scripts" keyword. Entry points provide cross-platform support and allow
-    # pip to create the appropriate form of executable for the target platform.
-    entry_points={
-        'console_scripts': [
-            'sample=sample:main',
-        ],
-    },
+        'amazon': ['Data/Amazon.csv'],
+        'google': ['Data/Google.csv'],
+        'microsoft': ['Data/Microsoft.csv'],
+    }
 )
