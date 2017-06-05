@@ -34,6 +34,9 @@ The project has the following structure:
            * |- test_HistoricalDataPlot.py  
         * |- setup.py   
       * |- doc/  
+        * |- Design specification and Project Plan
+        * |- Project Plan
+        * |- Presentation
       * |- examples/  
            * |- EarningReport Example
            * |- HistoricalDataPlot Example
