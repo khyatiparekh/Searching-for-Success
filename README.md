@@ -17,7 +17,7 @@ share it with others, test it, document it, and track its evolution.
 ## Organization of the  project
 
 The project has the following structure:  
-   * project_name/  
+   * Searching For Success/  
      * |- README.md  
      * |- LICENSE  
      * |- Searching For Success/  
