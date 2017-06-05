@@ -21,16 +21,11 @@ setup(name='searching_for_success',
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         'Development Status :: 3 - Alpha',
-
-        # Indicate who your project is intended for
-        'Intended Audience :: Students, Investors',
+        'Environment :: Web Environment',
+        'Intended Audience :: Education',
         'Topic :: Stock Market Prediction :: Google Trends',
-
-        # Pick your license as you wish (should match "license" above)
         'License :: OSI Approved :: GNU GENERAL PUBLIC LICENSE',
-
-        # Specify the Python versions you support here. In particular, ensure
-        # that you indicate whether you support Python 2, Python 3 or both.
+        'Natural Language :: English'
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
@@ -39,7 +34,7 @@ setup(name='searching_for_success',
 
     keywords='google trends stock price prediction technology company',
 
-    PACKAGES = find_packages(),
+    PACKAGES=find_packages(),
     #packages = ['EarningReport', 'HistoricalDataPlot', 'PredictionStockPrice'],
 
     # List run-time dependencies here.
