@@ -135,7 +135,7 @@ It consists of unit tests for `EarningReport.py, PredictionStockPrice.py and His
 This folder contains all the documentation related to the project, namely:
 1) Design specification and project plan,
 2) Final presentation,
-3) Functional specification,
+3) Functional specification
 
 
 
