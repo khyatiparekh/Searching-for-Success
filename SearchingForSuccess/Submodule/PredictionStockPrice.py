@@ -4,7 +4,7 @@ This mocdule implement three functions: feature_selection,
 prediction_model and prediction_stock_price. The first function,
 featues_selection will use Lasso regression model to select
 5 keywords that are significant to the company's stock performance.
-And the second function predcition_model will predict the
+And the second function prediction_model will predict the
 likelihood of stock prices increase or decrease after upcomming
 earning report released for given company. And the third function
 prediction _stock_price will call the previous functions
@@ -70,8 +70,8 @@ def prediction_model(keywords, price):
 
     # Logistic Regression Model
     model = linear_model.LogisticRegression(penalty='l2', fit_intercept=False, tol=10e-8,
-                                            max_iter=1000)
-    model.fit(keywords, price)
+                                            max_iter=1200)
+    model.fit(keywords, price.ravel())
     return round(np.mean(model.predict(keywords[-90:])), 3)
 
 
@@ -112,19 +112,19 @@ def prediction_stock_price(company):
     # Data Preparation
     keywords = data.drop('Price', axis=1)
     keywords = keywords.drop('Date', axis=1)
-    price = data.Price
+    price = data.Price.values.reshape(-1, 1)
     scaler = StandardScaler()
-    price = scaler.fit_transform(price)
+    price = scaler.fit_transform(price).ravel()
 
     beta_coeff = feature_selection(keywords, price)
 
     #Transfrom Stock Price to Price Change. 1 for positive change 0 for not positive change.
     data['Price Change'] = data['Price'].diff()
-    data['Price Change'][data['Price Change'] > 0] = 1
-    data['Price Change'][data['Price Change'] <= 0] = 0
+    data.loc[data['Price Change'] > 0] = 1
+    data.loc[data['Price Change'] <= 0] = 0
     data = data.dropna(axis=0, how='any')
     keywords = data[beta_coeff.argsort()[-5:][::-1]]
-    price = data['Price Change']
+    price = data['Price Change'].ravel()
 
     prediction_model(keywords, price)
     return prediction_model(keywords, price)
