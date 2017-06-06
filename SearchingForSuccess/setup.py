@@ -1,16 +1,18 @@
-# Always prefer setuptools over distutils
-from setuptools import setup, find_packages
-
+"""
+Setup for SearchingForSuccess module
+"""
 # To use a consistent encoding
 from codecs import open
 from os import path
-import SearchingForSuccess
 
-here = path.abspath(path.dirname(__file__))
+# Always prefer setuptools over distutils
+from setuptools import setup, find_packages
+
+HERE = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
-with open(path.join(here, "README.md"), encoding="utf-8") as f:
-    long_description = f.read()
+with open(path.join(HERE, "README.md"), encoding="utf-8") as f:
+    LONG_DESCRIPTION = f.read()
 
 setup(name="SearchingForSuccess",
       version="1.0",
@@ -33,15 +35,16 @@ setup(name="SearchingForSuccess",
       keywords='google trends stock price prediction technology company',
       packages=find_packages(),
       # packages = ['EarningReport', 'HistoricalDataPlot', 'PredictionStockPrice'],
-      # List run-time dependencies here.
+      # Run-time dependency modules, recommend installing with Anaconda, e.g.
+      #     conda install scikit-learn
       install_requires=[
           "bokeh", "cycler", "icu", "jinja2", "jpeg", "libpng",
           "lxml", "markupsafe", "matplotlib", "mkl", "numpy",
           "openssl", "pandas", "pyparsing", "pyqt", "python-dateutil",
-          "pytz", "pyyaml", "qt", "requests", "sip", "six", "tk",
-          "tornado", "zlib"
+          "pytz", "pyyaml", "qt", "requests", "sip", "six", "scikit-learn",
+          "tk", "tornado", "zlib"
       ],
-      # $ pip install -e .[dev,test]
+      # pytrends must be pip installed, e.g. pip install pytrends
       extras_require={
           "pytrends": ["Unofficial API for Google Trends"],
           "BeautifulSoup4": ["Screen-scraping library"],
@@ -51,4 +54,4 @@ setup(name="SearchingForSuccess",
           "google": ["Data/Google.csv"],
           "microsoft": ["Data/Microsoft.csv"],
       }
-      )
+     )
