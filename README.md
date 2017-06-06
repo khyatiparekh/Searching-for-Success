@@ -36,13 +36,11 @@ The project has the following structure:
            * |- test_HistoricalDataPlot.py  
         * |- setup.py   
       * |- doc/  
-        * |- Design specification and Project Plan
-        * |- Project Plan
+        * |- Design Specification and Project Plan
+        * |- Functional Specification
         * |- Presentation
       * |- examples/  
-           * |- EarningReport Example
-           * |- HistoricalDataPlot Example
-           * |- PredictionStockPrice Example
+           * |- Example with Amazon
       * .gitignore  
      
 In the following sections we will examine these elements one by one. First,
