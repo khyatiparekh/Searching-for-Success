@@ -8,7 +8,7 @@ on Google for selected company and get probability that the stock price will inc
 the quarterly reports will be released for the same company.
 
 To use it as a template for your own project, you will need to clone this
-repository into your computer and follow the instructions at the [bottom of this page]
+repository into your computer and follow the instructions in the `setup.py` in SearchingForSuccess.
 
 First, let me explain all the different moving parts that make up the
 python project, and all the elements which allow us to effectively
@@ -22,7 +22,7 @@ The project has the following structure:
    * Searching For Success/  
      * |- README.md  
      * |- LICENSE  
-     * |- Searching For Success/  
+     * |- SearchingForSuccess/  
         * |- __init__.py  
         * |- submodule/ 
            * |- __init__.py  
@@ -45,11 +45,12 @@ The project has the following structure:
      
 In the following sections we will examine these elements one by one. First,
 let's consider the core of the project. This is the code inside of
-`EarningReport.py, PredictionStockPrice.py and HistoricalPlot.py` in Searching For Success folder 
+`EarningReport.py, PredictionStockPrice.py and HistoricalPlot.py` in SearchingForSuccess/Submodule folder 
 
 ## Module Code
 We place the module code in three files called `EarningReport.py, PredictionStockPrice.py and HistoricalPlot.py`
-in the Submodule folder in Searching For Success.  For the functions to work, we need to run the interface.ipynb which contains code that imports everything in that file into the namespace of the project:  
+in the Submodule folder in SearchingForSuccess.  For the functions to work, we need to run the interface.ipynb 
+which contains code that imports everything in that file into the namespace of the project:  
 `import EarningReport  
  import PredictionStockPrice   
  import HistoricalPlot`  
@@ -116,15 +117,18 @@ The module will then output:
 5) The predicted probability that the stock price will increase after the next quarter's earnings have been released.
 
 ## Project Data
-In this case, the project data is rather small, and recorded in csv files saved in `Searching For Success/Data`.  
+In this case, the project data is rather small, and recorded in csv files saved in `SearchingForSuccess/Data`.  
+For Amazon, Google and Microsoft:  
+Daily Stock Price Data from 2007 - 2017  
+Daily Google Keywords Search Index Data 2007 - 2017  
 
 ## Example
 
-We have a demo notebook for each function. There is a folder for each function EarningReport.py, PredictionStockPrice.py and HistoricalDataPlot.py.
+We have a demo notebook for Amazon. It will import all modules and generate output for Amazon by running the notebook.  
 
 ## Testing  
 
-These consists of unit tests for each function.
+It consists of unit tests for `EarningReport.py, PredictionStockPrice.py and HistoricalPlot.py`.
 
 ## Documentation
 
@@ -132,8 +136,7 @@ This folder contains all the documentation related to the project, namely:
 1) Design specification and project plan,
 2) Final presentation,
 3) Functional specification,
-4) Interaction design, and
-5) Interface
+
 
 
 
