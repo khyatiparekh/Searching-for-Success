@@ -8,7 +8,7 @@
     The get_earnings_data first calls get_yahoo and if no earnings date, then
         calls get_default_report_dates for the estimated earnings report dates.
     The get_yahoofunction will download stock price data from Yahoo finance,
-        saves the daily quote information and returns the earnings report date(s).
+        and return the earnings report date(s).
 """
 
 import bisect
@@ -156,7 +156,7 @@ def get_yahoo(ticker):
         return {"error": "Failed to parse json response"}
 
 
-def get_earnings_data(company, ticker=None):
+def get_earnings_data(company):
     """ Calls get_current_data() to get the next earnings report date and writes
         data to JSON file since we may want to show more than just the next earnings date.
     Args:
@@ -167,12 +167,8 @@ def get_earnings_data(company, ticker=None):
     """
     company_dict = {"AMAZON": "AMZN", "APPLE": "AAPL", "GOOGLE": "GOOG",
                     "MICROSOFT": "MSFT", "NETFLIX": "NFLX"}
-    if ticker is None:
-        company = company.upper()
-        stock = company_dict[company]
-    else:
-        ticker = ticker.upper()
-        stock = ticker
+    company = company.upper()
+    stock = company_dict[company]
     logging.info("Fetching data for %s", str(stock))
     earnings_date, date_list = get_yahoo(stock)
     if earnings_date == "":
@@ -180,10 +176,10 @@ def get_earnings_data(company, ticker=None):
         report_date1 = report_date1.strftime('%B %d, %Y')
         report_date2 = report_date2.strftime('%B %d, %Y')
         print("The next earnings report from %s is expected: %s - %s.\n" %
-              (stock, str(report_date1), str(report_date2)))
+              (company.capitalize(), str(report_date1), str(report_date2)))
     else:
         print("The next earnings report from %s is expected: %s.\n" %
-              (stock, earnings_date))
+              (company.capitalize(), earnings_date))
     return date_list
 
 
