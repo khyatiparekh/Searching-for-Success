@@ -14,6 +14,8 @@ First, let me explain all the different moving parts that make up the
 python project, and all the elements which allow us to effectively
 share it with others, test it, document it, and track its evolution.
 
+We recommend using conda to install matplotlib and other such libraries to ensure smooth running of the module.
+
 ## Organization of the  project
 
 The project has the following structure:  
@@ -49,7 +51,7 @@ let's consider the core of the project. This is the code inside of
 
 ## Module Code
 We place the module code in three files called `EarningReport.py, PredictionStockPrice.py and HistoricalPlot.py`
-in the Submodule folder in Searching For Success.  For the functions to work, we need to run the interface.ipynb which contrain code that imports everything in that file into the namespace of the projcet:  
+in the Submodule folder in Searching For Success.  For the functions to work, we need to run the interface.ipynb which contains code that imports everything in that file into the namespace of the project:  
 `import EarningReport  
  import PredictionStockPrice   
  import HistoricalPlot`  
@@ -87,7 +89,7 @@ The first function,
 features_selection will use Lasso regression model to select
 5 keywords that are significant to the company's stock performance.
 And the second function predcition_model will predict the
-likelihood of stock prices increase or decrease after upcomming
+likelihood of stock prices increase or decrease after upcoming
 earning report released for given company. And the third function
 prediction _stock_price will call the previous functions
 based on the company name input.
@@ -99,7 +101,7 @@ This module implements one function: historical_data_plot.
 The function will read the data for the input company with selected keywords and then plot Google trends for selected keywords from previous feature selection. 
 Then plot daily adjusted close stock price for given company.
 
-###How to use module
+### How to use module
 
 Once you have run setup.py, choose the company for which you would like to see the prediction.
 
@@ -116,12 +118,24 @@ The module will then output:
 5) The predicted probability that the stock price will increase after the next quarter's earnings have been released.
 
 ## Project Data
-In this case, the project data is rather samll, and recorded in csv files saved in `Searching For Success/Data`.  
+In this case, the project data is rather small, and recorded in csv files saved in `Searching For Success/Data`.  
 
 ## Example
 
+We have a demo notebook for each function. There is a folder for each function EarningReport.py, PredictionStockPrice.py and HistoricalDataPlot.py.
+
 ## Testing  
+
+These consists of unit tests for each function.
 
 ## Documentation
 
-## Using `Searching For Success` as a template
+This folder contains all the documentation related to the project, namely:
+1) Design specification and project plan,
+2) Final presentation,
+3) Functional specification,
+4) Interaction design, and
+5) Interface
+
+
+
