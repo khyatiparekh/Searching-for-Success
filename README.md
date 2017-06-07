@@ -3,9 +3,9 @@
 # Searching For Success 
 ## Using google searches to predict the stock market
 
-Searching For Success is a template project that help amateur investor to visualize search trends 
+Searching For Success is a template project that can help an amateur investor to visualize search trends 
 on Google for selected company and get probability that the stock price will increase when 
-the quarterly reports will be released for the same company.
+the quarterly reports will be released for that company.
 
 To use it as a template for your own project, you will need to clone this
 repository into your computer and follow the instructions in the `setup.py` in SearchingForSuccess.
@@ -19,27 +19,27 @@ We recommend using conda to install matplotlib and other such libraries to ensur
 ## Organization of the  project
 
 The project has the following structure:  
-   * Searching For Success/  
+   * Searching For Success  
      * |- README.md  
      * |- LICENSE  
-     * |- SearchingForSuccess/  
+     * |- SearchingForSuccess  
         * |- __init__.py  
-        * |- submodule/ 
+        * |- Submodule
            * |- __init__.py  
            * |- EarningReport.py  
            * |- PredictionStockPrice.py  
            * |- HistoricalDataPlot.py  
-        * |- tests/  
+        * |- tests 
            * |- __init__.py  
-           * |- test_EarningReport.py  
-           * |- test_PredictionStockPrice.py  
-           * |- test_HistoricalDataPlot.py  
+           * |- test_earnings_report.py  
+           * |- test_prediction_stock_price.py  
+           * |- test_historical_data_plot.py  
         * |- setup.py   
-      * |- doc/  
+      * |- Doc 
         * |- Design Specification and Project Plan
         * |- Functional Specification
         * |- Presentation
-      * |- examples/  
+      * |- Examples  
            * |- Example with Amazon
       * .gitignore  
      
