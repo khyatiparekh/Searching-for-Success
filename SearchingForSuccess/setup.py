@@ -38,17 +38,12 @@ setup(name="SearchingForSuccess",
       # Run-time dependency modules, recommend installing with Anaconda, e.g.
       #     conda install scikit-learn
       install_requires=[
-          "bokeh", "cycler", "icu", "jinja2", "jpeg", "libpng",
-          "lxml", "markupsafe", "matplotlib", "mkl", "numpy",
+          "beautifulsoup4", "bokeh", "cycler", "icu", "jinja2", "jpeg",
+          "libpng", "lxml", "markupsafe", "matplotlib", "mkl", "numpy",
           "openssl", "pandas", "pyparsing", "pyqt", "python-dateutil",
-          "pytz", "pyyaml", "qt", "requests", "sip", "six", "scikit-learn",
-          "tk", "tornado", "zlib"
+          "pytrends", "pytz", "pyyaml", "qt", "requests", "sip", "six",
+          "scikit-learn", "tk", "tornado", "zlib"
       ],
-      # pytrends must be pip installed, e.g. pip install pytrends
-      extras_require={
-          "pytrends": ["Unofficial API for Google Trends"],
-          "BeautifulSoup4": ["Screen-scraping library"],
-      },
       package_data={
           "amazon": ["Data/Amazon.csv"],
           "google": ["Data/Google.csv"],
