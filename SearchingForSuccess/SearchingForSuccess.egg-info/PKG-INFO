@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: SearchingForSuccess
+Version: 1.0
+Summary: Predicting stock price change on earnings release based on Google Trends data
+Home-page: https:/github.com/khyatiparekh/Data515_FinalProject/
+Author: DATA 515 Group
+Author-email: data515gtrend@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: google trends stock price prediction technology company
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Education
+Classifier: Topic :: Stock Market Prediction :: Google Trends
+Classifier: License :: OSI Approved :: GNU GENERAL PUBLIC LICENSE
+Classifier: Natural Language :: EnglishProgramming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
